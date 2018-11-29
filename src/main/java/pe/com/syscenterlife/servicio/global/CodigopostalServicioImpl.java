@@ -25,14 +25,14 @@ public CodigopostalDaoI daoI;
 
     @Override
     public List<GloCodigopostal> listarEntidad(){return daoI.listarEntidad();}
-//    @Override    
-//    public List<GloCodigopostal> listarEntidadDato(String dato){return daoI.listarEntidadDato(dato);}
-//    @Override    
-//    public GloCodigopostal buscarEntidadId(int id){return daoI.buscarEntidadId(id);}
-//    @Override    
-//    public void guardarEntidad(GloCodigopostal codigopostal){daoI.guardarEntidad(codigopostal);}
-//    @Override    
-//    public void eliminarEntidad(int id){daoI.eliminarEntidad(id);}
-//    @Override    
-//    public void modificarEntidad(GloCodigopostal codigopostal){daoI.modificarEntidad(codigopostal);} 
+    @Override    
+    public List<GloCodigopostal> listarEntidadDato(String dato){return daoI.listarEntidadDato(dato);}
+    @Override    
+    public GloCodigopostal buscarEntidadId(int id){return daoI.buscarEntidadId(id);}
+    @Override    
+    public void guardarEntidad(GloCodigopostal codigopostal){daoI.guardarEntidad(codigopostal);}
+    @Override    
+    public void eliminarEntidad(int id){daoI.eliminarEntidad(id);}
+    @Override    
+    public void modificarEntidad(GloCodigopostal codigopostal){daoI.modificarEntidad(codigopostal);} 
 }

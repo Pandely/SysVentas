@@ -25,38 +25,41 @@ import pe.com.syscenterlife.servicio.global.SucursalServicioI;
  */
 @Controller
 public class SucursalControl {
+    
     @Autowired
     private MessageSource messageSource;
     @Autowired
     SucursalServicioI sucursalServicioI;
-
+    
+    
     @RequestMapping(value = {"/sucMain" }, method = RequestMethod.GET)    
     public ModelAndView inicioSucursal(Locale locale, Map<String,Object> model){
-        String welcome=messageSource.getMessage("welcome.message", new Object[]{"Pandely Ali"}, locale);
-        List<GloSucursal> lista=sucursalServicioI.listarEntidad();
+        String welcome = messageSource.getMessage("welcome.message", new Object[]{"Pandely Ali"}, locale);
+        List<GloSucursal> lista = sucursalServicioI.listarEntidad();
 
         model.put("ListaSucursal", lista);
         model.put("message", welcome);
-        model.put("startMeeting", "09:10");
-
+        model.put("startMeeting", "09:10"); 
         return new ModelAndView("global/sucursal/mainSucursal");
     } 
     
     @RequestMapping(value = {"/buscarSuc"}, method = RequestMethod.POST)
-    public  ModelAndView buscarEntidad(Locale locale, Map<String,Object> model, HttpServletRequest r){
+    public  ModelAndView buscarEntidad(Locale locale, Map<String,Object> model,
+        HttpServletRequest r){
         String welcome=messageSource.getMessage("welcome.message", new Object[]{"Pandely Ali"}, locale);
         String dato=r.getParameter("dato");
-        List<GloSucursal> lista=sucursalServicioI.listarEntidadDato(dato);
+        List<GloSucursal> lista = sucursalServicioI.listarEntidadDato(dato);
         model.put("ListaSucursal", lista);
         model.put("message", welcome);
-        model.put("startMeeting", "09:10");    
+        model.put("startMeeting", "09:10");       
     return new ModelAndView("global/sucursal/mainSucursal");
     } 
     
-    @RequestMapping(value = {"/elimSuc" }, method = RequestMethod.GET)
+@RequestMapping(value = {"/elimSuc" }, method = RequestMethod.GET)
     public ModelAndView eliminarPersona(HttpServletRequest r){
         int idEntidad=Integer.parseInt(r.getParameter("id"));
         sucursalServicioI.eliminarEntidad(idEntidad);
     return new ModelAndView(new RedirectView("/sucMain"));
     }
+    
 }

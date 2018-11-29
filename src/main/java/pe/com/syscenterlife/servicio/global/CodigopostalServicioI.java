@@ -14,9 +14,9 @@ import pe.com.syscenterlife.modelo.GloCodigopostal;
  */
 public interface CodigopostalServicioI {
     public List<GloCodigopostal> listarEntidad();
-//    public List<GloCodigopostal> listarEntidadDato(String dato);
-//    public GloCodigopostal buscarEntidadId(int id);
-//    public void guardarEntidad(GloCodigopostal codigopostal);
-//    public void eliminarEntidad(int id);
-//    public void modificarEntidad(GloCodigopostal codigopostal);    
+    public List<GloCodigopostal> listarEntidadDato(String dato);
+    public GloCodigopostal buscarEntidadId(int id);
+    public void guardarEntidad(GloCodigopostal codigopostal);
+    public void eliminarEntidad(int id);
+    public void modificarEntidad(GloCodigopostal codigopostal);    
 }

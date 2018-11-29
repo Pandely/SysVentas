@@ -40,7 +40,7 @@
         <table id="example1" class="table table-bordered table-striped">
           <thead >
             <tr>
-              <th >idEmpresa</th>
+              <th >Empresa</th>
               <th >Lugar</th>
               <th >Direccion</th>
               <th >Opciones</th>
@@ -49,7 +49,7 @@
           <tbody>
                 <c:forEach items="${ListaSucursal}" var="dato">
                       <tr>
-                        <td>${dato.idEmpresa}</td>
+                        <td>${dato.idEmpresa.razonsocial}</td>
                         <td>${dato.lugar}</td>
                         <td>${dato.direccion}</td>
                         <td align="center">
@@ -62,7 +62,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                <th >idEmpresa</th>
+                <th >Empresa</th>
                 <th >Lugar</th>
                 <th >Direccion</th>
                 <th >Opciones</th>

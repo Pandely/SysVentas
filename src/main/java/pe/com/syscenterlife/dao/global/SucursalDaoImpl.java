@@ -28,7 +28,7 @@ public class SucursalDaoImpl extends SysDataAccess<Integer, GloSucursal> impleme
                 .setParameter(1, "%"+dato+"%")
                 .list(); 
     }
-    @Override
+     @Override
     public GloSucursal buscarEntidadId(int id){return getById(id);}
     @Override
     public void guardarEntidad(GloSucursal sucursal){savev(sucursal);}

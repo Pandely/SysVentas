@@ -15,10 +15,25 @@ import pe.com.syscenterlife.modelo.GloCodigopostal;
  * @author pc
  */
 @Repository
-public class CodigopostalDaoImpl extends SysDataAccess<Integer, GloCodigopostal> implements CodigopostalDaoI
-{
-  @SuppressWarnings("unchecked")
-  @Override
+public class CodigopostalDaoImpl extends SysDataAccess<Integer, GloCodigopostal> implements CodigopostalDaoI{
+    
+    @SuppressWarnings("unchecked")
+    
+    @Override
     public List<GloCodigopostal> listarEntidad(){return getListAll();}
-
+    @Override
+    public List<GloCodigopostal> listarEntidadDato(String dato){
+            return (List<GloCodigopostal>)sessionFactory.getCurrentSession()
+                .createQuery("SELECT p from GloCodigopostal p WHERE p.ubigeo LIKE ?1 ")
+                .setParameter(1, "%"+dato+"%")
+                .list(); 
+    }
+    @Override
+    public GloCodigopostal buscarEntidadId(int id){return getById(id);}
+    @Override
+    public void guardarEntidad(GloCodigopostal codigopostal){savev(codigopostal);}
+    @Override
+    public void eliminarEntidad(int id){delete(id);}
+    @Override
+    public void modificarEntidad(GloCodigopostal codigopostal){update(codigopostal);}
 }

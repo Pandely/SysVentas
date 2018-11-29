@@ -22,7 +22,7 @@ public class EmpresaServicioImpl implements EmpresaServicioI{
   @Autowired
  public EmpresaDaoI daoI;
   @Override
-    public List<GloEmpresa> listarEntidad(){return listarEntidad();}
+    public List<GloEmpresa> listarEntidad(){return daoI.listarEntidad();}
   @Override
     public List<GloEmpresa> listarEntidadDato(String dato){return daoI.listarEntidadDato(dato);}
   @Override

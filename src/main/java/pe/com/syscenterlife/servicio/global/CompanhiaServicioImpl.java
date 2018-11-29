@@ -20,9 +20,9 @@ import pe.com.syscenterlife.modelo.GloCompanhia;
 @Transactional
 public class CompanhiaServicioImpl implements CompanhiaServicioI{
     @Autowired
-  public CompanhiaDaoI daoI;
+    public CompanhiaDaoI daoI;
     @Override
-    public List<GloCompanhia> listarEntidad(){return listarEntidad();}
+    public List<GloCompanhia> listarEntidad(){return daoI.listarEntidad();}
     @Override
     public List<GloCompanhia> listarEntidadDato(String dato){return daoI.listarEntidadDato(dato);}
     @Override
